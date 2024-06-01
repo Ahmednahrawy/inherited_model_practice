@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'dart:math' show Random;
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'inherited_model_practice',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -29,4 +30,23 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+final colors = [
+  Colors.blue,
+  Colors.red,
+  Colors.yellow,
+  Colors.orange,
+  Colors.purple,
+  Colors.cyan,
+  Colors.brown,
+  Colors.amber,
+  Colors.deepOrange,
+  Colors.lightBlueAccent,
+];
+
+extension RandomElement<T> on Iterable<T> {
+  T getRandomElement() => elementAt(
+        Random().nextInt(length),
+      );
 }
