@@ -4,7 +4,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'inherited_model_practice',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
