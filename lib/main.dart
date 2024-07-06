@@ -15,33 +15,6 @@ void main() {
   );
 }
 
-class SliderData extends ChangeNotifier {
-  double _value = 0.0;
-  double get value => _value;
-  set value(double newValue) {
-    if (newValue != _value) {
-      _value = newValue;
-      notifyListeners();
-    }
-  }
-}
-
-final sliderData = SliderData();
-
-class SliderInheritedNotifier extends InheritedNotifier<SliderData> {
-  const SliderInheritedNotifier({
-    super.key,
-    required SliderData sliderData,
-    required super.child,
-  });
-  static double of(BuildContext context) =>
-      context
-          .dependOnInheritedWidgetOfExactType<SliderInheritedNotifier>()
-          ?.notifier
-          ?.value ??
-      0.0;
-}
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -95,6 +68,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
 
 final colors = [
   Colors.blue,
